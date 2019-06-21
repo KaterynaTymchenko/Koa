@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
@@ -36,7 +37,7 @@ export default function Header() {
             Idea`s generator
           </Typography>
           <Button variant="contained" className={classes.button}>
-            Login
+            <Link to="/home">Login</Link>
           </Button>
           <Button variant="contained" className={classes.button}>
             Menu
