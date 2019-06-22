@@ -1,0 +1,26 @@
+.mainContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    text-align: center;
+    flex-grow:1;
+    min-height: 63vh;
+}
+
+.footer {
+    flex-grow: 1;
+    margin: auto;
+}
+
+.info {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    flex-grow: 1;
+    padding: 20px;
+}

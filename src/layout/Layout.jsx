@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Main from './components/Main';
+import './layout.css';
 
 class Layout extends Component {
   render() {
     return (
       <div className="mainContainer">
         <Header />
-        <Main />
+        <main className="main">{this.props.children}</main>
         <Footer />
       </div>
     );

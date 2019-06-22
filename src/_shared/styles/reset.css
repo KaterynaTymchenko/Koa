@@ -1,0 +1,40 @@
+html,
+body,
+div,
+span,
+header,
+main,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+:focus {
+  outline: 0;
+}
+ul {
+  list-style: none;
+}
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+input {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: 1;
+}
