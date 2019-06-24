@@ -21,5 +21,6 @@ module.exports = {
     'react/prefer-stateless-function': 0,
     'react/prop-types': 0,
     'react/destructuring-assignment': 0,
+    'class-methods-use-this': 0,
   },
 };
