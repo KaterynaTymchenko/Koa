@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import './footer.scss';
 
-export default function ButtonAppBar() {
+function Footer() {
   return (
     <AppBar position="static">
       <Toolbar>
@@ -16,8 +16,15 @@ export default function ButtonAppBar() {
               Footer
             </Typography>
           </Container>
+          <Container className="footerIcons">
+            <i className="material-icons">face</i>
+            <i className="material-icons">grade</i>
+            <i className="material-icons">language</i>
+          </Container>
         </footer>
       </Toolbar>
     </AppBar>
   );
 }
+
+export default Footer;

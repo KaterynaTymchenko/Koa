@@ -1,4 +1,10 @@
 .footer {
-    flex-grow: 1;
-    margin: auto;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin: auto;
+}
+
+.footerIcons {
+  text-align: center;
 }
