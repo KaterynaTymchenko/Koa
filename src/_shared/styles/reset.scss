@@ -31,10 +31,9 @@ button {
 }
 input {
   margin: 0;
-  border: 0;
+  border: 1px solid grey;
   padding: 0;
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
   white-space: normal;
   line-height: 1;
 }

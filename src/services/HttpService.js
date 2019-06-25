@@ -1,4 +1,6 @@
-const customFetch = (url, options) => fetch(url, options).then((res) => {
+const httpPath = 'http://localhost:3001';
+
+const customFetch = (url, options) => fetch(`${httpPath}/${url}`, options).then((res) => {
   if (!res.ok) {
     throw new Error('ERROR');
   } else {
@@ -11,7 +13,13 @@ const httpService = {
     return customFetch(url);
   },
   post(url, data) {
-    return customFetch(url, { method: 'POST', data });
+    return customFetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
   },
 };
 export default httpService;
