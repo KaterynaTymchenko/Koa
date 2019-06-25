@@ -1,6 +1,6 @@
 .ideaItem {
   width: 345px;
-  max-height: 345px;
+  max-height: 450px;
   margin-right: 20px;
   margin-top: 20px;
   display: flex;
@@ -10,4 +10,15 @@
 
 .MuiAvatar-colorDefault {
   background: #f50057 !important;
+}
+
+.cardMedia {
+  height: 150px;
+  width: 200px;
+  background-size: contain;
+  margin: auto;
+}
+
+.paragraph {
+  padding-top: 30px;
 }

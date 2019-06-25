@@ -8,45 +8,39 @@ import TextField from '@material-ui/core/TextField';
 import './form.scss';
 
 const CustomTitle = ({ field }) => (
-  <div>
-    <TextField
-      {...field}
-      className="formField"
-      id="filled-with-placeholder"
-      label="Title"
-      placeholder="Enter Title"
-      margin="normal"
-      variant="filled"
-    />
-  </div>
+  <TextField
+    {...field}
+    className="formField"
+    id="filled-with-placeholder"
+    label="Title"
+    placeholder="Enter Title"
+    margin="normal"
+    variant="filled"
+  />
 );
 
 const CustomDescription = ({ field }) => (
-  <div>
-    <TextField
-      {...field}
-      className="formField"
-      id="filled-with-placeholder"
-      label="Description"
-      placeholder="Enter description"
-      margin="normal"
-      variant="filled"
-    />
-  </div>
+  <TextField
+    {...field}
+    className="formField"
+    id="filled-with-placeholder"
+    label="Description"
+    placeholder="Enter description"
+    margin="normal"
+    variant="filled"
+  />
 );
 
 const CustomAuthor = ({ field }) => (
-  <div>
-    <TextField
-      className="formField"
-      {...field}
-      id="filled-with-placeholder"
-      label="Author"
-      placeholder="Enter Author"
-      margin="normal"
-      variant="filled"
-    />
-  </div>
+  <TextField
+    className="formField"
+    {...field}
+    id="filled-with-placeholder"
+    label="Author"
+    placeholder="Enter Author"
+    margin="normal"
+    variant="filled"
+  />
 );
 
 const SignupSchema = Yup.object().shape({
@@ -55,7 +49,7 @@ const SignupSchema = Yup.object().shape({
     .max(20, <Typography>Too Long!</Typography>)
     .required(<i className="material-icons">remove_circle_outline</i>),
   description: Yup.string()
-    .max(50, <Typography>Too Long!</Typography>)
+    .min(20, <Typography>Too Short!</Typography>)
     .required(<i className="material-icons">remove_circle_outline</i>),
   author: Yup.string()
     .matches(/^.[a-zA-Z_]+$/, {
