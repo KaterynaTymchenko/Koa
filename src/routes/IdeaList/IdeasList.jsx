@@ -5,7 +5,7 @@ import IdeaItem from './components/IdeaItem';
 
 import './ideasList.scss';
 
-export default class IdeaLsist extends Component {
+export default class IdeaList extends Component {
   componentDidMount() {
     const { getDataIdeas } = this.props;
     getDataIdeas();
@@ -16,7 +16,7 @@ export default class IdeaLsist extends Component {
     return (
       <>
         <Button variant="contained" color="secondary" className="createButton">
-          <Link to="/some-page">Create Idea</Link>
+          <Link to="/create-idea">Create Idea</Link>
         </Button>
         <ul className="ideaList">
           {ideas.map(idea => (

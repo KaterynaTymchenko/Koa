@@ -22,5 +22,6 @@ module.exports = {
     'react/prop-types': 0,
     'react/destructuring-assignment': 0,
     'class-methods-use-this': 0,
+    'import/no-extraneous-dependencies': 0,
   },
 };
