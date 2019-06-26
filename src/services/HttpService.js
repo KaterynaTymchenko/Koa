@@ -20,5 +20,10 @@ const httpService = {
       body: JSON.stringify(data),
     });
   },
+  delete(url, id) {
+    return customFetch(`${url}/${id}`, {
+      method: 'DELETE',
+    });
+  },
 };
 export default httpService;

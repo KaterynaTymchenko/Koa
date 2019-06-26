@@ -8,11 +8,14 @@ import './ideasList.scss';
 export default class IdeaList extends Component {
   componentDidMount() {
     const { getDataIdeas } = this.props;
-    getDataIdeas();
+
+    if (!this.props.ideas.length) {
+      getDataIdeas();
+    }
   }
 
   render() {
-    const { ideas } = this.props;
+    const { ideas, deleteDataIdea } = this.props;
     return (
       <>
         <Button variant="contained" color="secondary" className="createButton">
@@ -20,7 +23,7 @@ export default class IdeaList extends Component {
         </Button>
         <ul className="ideaList">
           {ideas.map(idea => (
-            <IdeaItem key={idea.id} {...idea} />
+            <IdeaItem key={idea.id} {...idea} deleteIdea={deleteDataIdea} />
           ))}
         </ul>
       </>

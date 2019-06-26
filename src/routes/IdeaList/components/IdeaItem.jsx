@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
 
 import './ideaItem.scss';
 
@@ -40,6 +41,9 @@ export default function IdeaItem(props) {
           <ShareIcon />
         </IconButton>
         <IconButton />
+        <Button onClick={() => props.deleteIdea(props.id)}>
+          <i className="material-icons iconDelete">delete_forever</i>
+        </Button>
       </CardActions>
     </Card>
   );
