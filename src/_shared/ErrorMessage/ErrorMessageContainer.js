@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  error: state.ideas.haveError,
+  error: state.error.haveError,
 });
 
 export default connect(mapStateToProps);
