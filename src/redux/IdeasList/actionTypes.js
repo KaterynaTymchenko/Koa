@@ -1,2 +1,3 @@
 export const FETCH_IDEAS_SUCCESS = 'FETCH_IDEAS_SUCCESS';
 export const CREATE_IDEA = 'CREATE_IDEA';
+export const DELETE_IDEA = 'DELETE_IDEA';

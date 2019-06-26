@@ -1,28 +1,16 @@
 {
   "ideasCards": [
     {
-      "id": 1,
-      "title": "Test idea card 1",
-      "description": "This is first test idea card",
-      "author": "Kate"
+      "title": "tttttttttt",
+      "description": "ttttttttttttttttttttttttttttt",
+      "author": "ttttttt",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Test idea card 2",
-      "description": "This is second test idea card",
-      "author": "Harry"
-    },
-    {
-      "id": 3,
-      "title": "Test idea card 3",
-      "description": "This is third test idea card",
-      "author": "Ronald"
-    },
-    {
-      "title": "ggggggggggggg",
-      "description": "ggggfdfdddddddddddddddddd",
-      "author": "dddddddddddd",
-      "id": 4
+      "title": "ttttt",
+      "description": "ttttttttttttttttttttttt",
+      "author": "tttttttttt",
+      "id": 2
     }
   ]
 }

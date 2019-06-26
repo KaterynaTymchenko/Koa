@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { fetchIdeasSuccess, createIdea } from './IdeasListAction';
+import { fetchIdeasSuccess, createIdea, deleteIdea } from './IdeasListAction';
 
 const defaultState = {
   ideas: [],
@@ -12,6 +12,10 @@ const ideasListReducer = handleActions(
       ideas: action.payload,
     }),
     [createIdea]: (state, action) => ({ ...state, ideas: [...state.ideas, action.payload] }),
+    [deleteIdea]: (state, action) => ({
+      ...state,
+      ideas: state.ideas.filter(item => action.payload !== item.id),
+    }),
   },
   defaultState,
 );
