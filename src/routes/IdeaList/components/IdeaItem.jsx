@@ -8,10 +8,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import CardMedia from '@material-ui/core/CardMedia';
 
 import './ideaItem.scss';
 
 export default function IdeaItem(props) {
+  const url = `https://loremflickr.com/320/240?lock=${props.id}`;
   return (
     <Card className="ideaItem">
       <CardHeader
@@ -23,7 +25,10 @@ export default function IdeaItem(props) {
         title={props.title}
       />
       <CardContent>
-        <Typography color="textSecondary">{props.description}</Typography>
+        <CardMedia className="cardMedia" image={url} title="Paella dish" />
+        <Typography className="paragraph" color="textSecondary">
+          {props.description}
+        </Typography>
         <Typography color="textSecondary">Author:</Typography>
         <Typography color="primary">{props.author}</Typography>
       </CardContent>

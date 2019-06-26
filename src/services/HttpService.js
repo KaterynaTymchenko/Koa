@@ -2,10 +2,9 @@ const httpPath = 'http://localhost:3001';
 
 const customFetch = (url, options) => fetch(`${httpPath}/${url}`, options).then((res) => {
   if (!res.ok) {
-    throw new Error('ERROR');
-  } else {
-    return res.json();
+    return Promise.reject();
   }
+  return res.json();
 });
 
 const httpService = {
