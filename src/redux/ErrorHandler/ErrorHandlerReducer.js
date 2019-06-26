@@ -1,15 +1,14 @@
 import { handleActions } from 'redux-actions';
-import { fetchIdeasFailure, fetchIdeasStart } from './ErrorHandlerAction';
+import { fetchStart, fetchFailure } from './ErrorHandlerAction';
 
 const defaultState = {
-  isLoading: false,
   haveError: false,
 };
 
 const ideasListReducer = handleActions(
   {
-    [fetchIdeasStart]: state => ({ ...state, isLoading: true, haveError: false }),
-    [fetchIdeasFailure]: state => ({ ...state, isLoading: false, haveError: true }),
+    [fetchStart]: state => ({ ...state, haveError: false }),
+    [fetchFailure]: state => ({ ...state, haveError: true }),
   },
   defaultState,
 );

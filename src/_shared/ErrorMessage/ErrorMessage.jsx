@@ -13,6 +13,7 @@ function ErrorMessage(props) {
     }
     setOpen(false);
   }
+
   if (error) {
     return (
       <div>
@@ -37,7 +38,8 @@ function ErrorMessage(props) {
       </div>
     );
   }
-  return <div />;
+
+  return null;
 }
 
 export default ErrorMessage;
