@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import SignupSchema from '../../utils/validationCreateIdea';
 import './form.scss';
 
 const CustomTitle = ({ field }) => (
@@ -42,23 +42,6 @@ const CustomAuthor = ({ field }) => (
     variant="filled"
   />
 );
-
-const SignupSchema = Yup.object().shape({
-  title: Yup.string()
-    .min(4, <Typography>Too Short!</Typography>)
-    .max(20, <Typography>Too Long!</Typography>)
-    .required(<i className="material-icons">remove_circle_outline</i>),
-  description: Yup.string()
-    .min(20, <Typography>Too Short!</Typography>)
-    .required(<i className="material-icons">remove_circle_outline</i>),
-  author: Yup.string()
-    .matches(/^.[a-zA-Z_]+$/, {
-      message: <Typography>Only letters!</Typography>,
-    })
-    .min(4, <Typography>Too Short!</Typography>)
-    .max(30, <Typography>Too Long!</Typography>)
-    .required(<i className="material-icons">remove_circle_outline</i>),
-});
 
 class Form extends Component {
   render() {

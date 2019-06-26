@@ -20,7 +20,11 @@ export const getDataIdeas = () => (dispatch) => {
 };
 
 export const postDataIdea = data => (dispatch) => {
-  httpServise.post('ideasCards', data).then(res => dispatch(createIdea(res)));
+  dispatch(fetchIdeasStart());
+  httpServise
+    .post('ideasCards', data)
+    .then(res => dispatch(createIdea(res)))
+    .catch(() => dispatch(fetchIdeasFailure()));
 };
 
 export default getDataIdeas;

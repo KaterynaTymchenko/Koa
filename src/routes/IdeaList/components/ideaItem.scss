@@ -13,10 +13,12 @@
 }
 
 .cardMedia {
-  height: 150px;
+  height: 170px;
   width: 200px;
+  padding: 0;
   background-size: contain;
   margin: auto;
+  border-radius: 6px;
 }
 
 .paragraph {
