@@ -96,7 +96,12 @@ export default class IdeaItem extends Component {
             {form}
           </Container>
           {button}
-          <Button>
+          <Button
+            onClick={() => {
+              this.props.deleteDataIdea(this.props.idea.id);
+              this.props.history.push('/');
+            }}
+          >
             <i className="material-icons buttonIdea">delete</i>
           </Button>
         </CardContent>
