@@ -5,7 +5,7 @@ const defaultState = {
   haveError: false,
 };
 
-const ideasListReducer = handleActions(
+const ErrorHandlerReducer = handleActions(
   {
     [fetchStart]: state => ({ ...state, haveError: false }),
     [fetchFailure]: state => ({ ...state, haveError: true }),
@@ -13,4 +13,4 @@ const ideasListReducer = handleActions(
   defaultState,
 );
 
-export default ideasListReducer;
+export default ErrorHandlerReducer;

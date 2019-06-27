@@ -15,15 +15,17 @@ export default class IdeaList extends Component {
   }
 
   render() {
-    const { ideas, deleteDataIdea } = this.props;
+    const { ideas, deleteDataIdea, history } = this.props;
     return (
       <>
         <Button variant="contained" color="secondary" className="createButton">
-          <Link to="/create-idea">Create Idea</Link>
+          <Link to="/create-idea" params={{ title: 'kate' }}>
+            Create Idea
+          </Link>
         </Button>
         <ul className="ideaList">
           {ideas.map(idea => (
-            <IdeaItem key={idea.id} {...idea} deleteIdea={deleteDataIdea} />
+            <IdeaItem key={idea.id} {...idea} deleteIdea={deleteDataIdea} history={history} />
           ))}
         </ul>
       </>

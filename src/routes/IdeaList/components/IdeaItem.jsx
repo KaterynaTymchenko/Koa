@@ -10,6 +10,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 import './ideaItem.scss';
 
@@ -26,7 +27,7 @@ export default function IdeaItem(props) {
         title={props.title}
       />
       <CardContent>
-        <CardMedia className="cardMedia" image={url} title="Paella dish" />
+        <CardMedia className="cardMedia" image={url} title="Cat" />
         <Typography className="paragraph" color="textSecondary">
           {props.description}
         </Typography>
@@ -44,6 +45,7 @@ export default function IdeaItem(props) {
         <Button onClick={() => props.deleteIdea(props.id)}>
           <i className="material-icons iconDelete">delete_forever</i>
         </Button>
+        <Link to={{ pathname: `/${props.id}` }}>Open</Link>
       </CardActions>
     </Card>
   );
