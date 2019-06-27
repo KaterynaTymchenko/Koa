@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { getDataIdeas } from '../../redux/IdeasList/IdeasListAction';
+import { getDataIdeas, updateDataIdea } from '../../redux/IdeasList/IdeasListAction';
 
 const mapStateToProps = (state, ownProps) => ({
   idea: state.ideas.ideas.find(item => item.id === +ownProps.match.params.id),
 });
 
-const mapDispatchToProps = { getDataIdeas };
+const mapDispatchToProps = { getDataIdeas, updateDataIdea };
 
 export default connect(
   mapStateToProps,

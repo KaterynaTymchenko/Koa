@@ -1,5 +1,7 @@
 import { handleActions } from 'redux-actions';
-import { fetchIdeasSuccess, createIdea, deleteIdea } from './IdeasListAction';
+import {
+  fetchIdeasSuccess, createIdea, deleteIdea, updateIdea,
+} from './IdeasListAction';
 
 const defaultState = {
   ideas: [],
@@ -16,6 +18,15 @@ const ideasListReducer = handleActions(
       ...state,
       ideas: state.ideas.filter(item => action.payload !== item.id),
     }),
+    [updateIdea]: (state, action) => {
+      const newIdeas = state.ideas.map((item) => {
+        if (item.id === action.payload.id) {
+          return action.payload;
+        }
+        return item;
+      });
+      return { ...state, ideas: newIdeas };
+    },
   },
   defaultState,
 );

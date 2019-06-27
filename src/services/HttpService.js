@@ -25,5 +25,14 @@ const httpService = {
       method: 'DELETE',
     });
   },
+  put(url, id, data) {
+    return customFetch(`${url}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  },
 };
 export default httpService;
