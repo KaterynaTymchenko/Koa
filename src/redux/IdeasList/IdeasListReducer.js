@@ -1,10 +1,11 @@
 import { handleActions } from 'redux-actions';
 import {
-  fetchIdeasSuccess, createIdea, deleteIdea, updateIdea,
+  fetchIdeasSuccess, createIdea, deleteIdea, updateIdea, getIdea,
 } from './IdeasListAction';
 
 const defaultState = {
   ideas: [],
+  idea: {},
 };
 
 const ideasListReducer = handleActions(
@@ -27,6 +28,7 @@ const ideasListReducer = handleActions(
       });
       return { ...state, ideas: newIdeas };
     },
+    [getIdea]: (state, action) => ({ ...state, idea: action.payload }),
   },
   defaultState,
 );

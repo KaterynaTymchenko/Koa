@@ -20,8 +20,8 @@ export default class IdeaItem extends Component {
   }
 
   componentDidMount() {
-    const { getDataIdeas } = this.props;
-    getDataIdeas();
+    const { getDataIdea } = this.props;
+    getDataIdea(this.props.match.params.id);
   }
 
   handleEdit() {
@@ -32,11 +32,12 @@ export default class IdeaItem extends Component {
   }
 
   render() {
-    const { id } = this.props.match.params;
-    const url = `https://loremflickr.com/320/240?lock=${id}`;
+    const { ideaSingle } = this.props;
+    const url = `https://loremflickr.com/320/240?lock=${ideaSingle.id}`;
     let button;
     let title;
     let description;
+    let author;
     let media;
     let form;
     if (this.state.edit) {
@@ -49,10 +50,15 @@ export default class IdeaItem extends Component {
           <i className="material-icons buttonIdea">create</i>
         </Button>
       );
-      title = <CardHeader title={this.props.idea.title} />;
+      title = <CardHeader title={ideaSingle.title} />;
       description = (
         <Typography className="paragraph" color="textSecondary">
-          {this.props.idea.description}
+          {ideaSingle.description}
+        </Typography>
+      );
+      author = (
+        <Typography className="paragraph" color="textSecondary">
+          {ideaSingle.author}
         </Typography>
       );
       media = <CardMedia className="cardMedia" image={url} title="Cat" />;
@@ -65,12 +71,12 @@ export default class IdeaItem extends Component {
           <CardMedia className="cardMedia" image={url} title="Cat" />
           <Formik
             initialValues={{
-              title: this.props.idea.title,
-              description: this.props.idea.description,
-              author: this.props.idea.author,
+              title: ideaSingle.title,
+              description: ideaSingle.description,
+              author: ideaSingle.author,
             }}
             onSubmit={(values, actions) => {
-              this.props.updateDataIdea(this.props.idea.id, values);
+              this.props.updateDataIdea(ideaSingle.id, values);
               actions.setSubmitting(false);
               this.props.history.push('/');
             }}
@@ -93,6 +99,7 @@ export default class IdeaItem extends Component {
           {media}
           <Container className="infoBox">
             {description}
+            {author}
             {form}
           </Container>
           {button}

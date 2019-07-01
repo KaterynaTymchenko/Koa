@@ -1,10 +1,10 @@
 {
   "ideasCards": [
     {
-      "id": 1,
       "title": "Test idea card",
       "description": "This is first test idea card",
-      "author": "Test User"
+      "author": "Test Useryyyy",
+      "id": 1
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
     },
     {
       "title": "Kate",
-      "description": "oiiiiiiiiiii",
+      "description": "oiiiiiiiiiiiuuuuu",
       "author": "kkkkkkkkkk",
       "id": 4
     }

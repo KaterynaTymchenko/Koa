@@ -1,6 +1,10 @@
 import { createAction } from 'redux-actions';
 import {
-  FETCH_IDEAS_SUCCESS, CREATE_IDEA, DELETE_IDEA, UPDATE_IDEA,
+  FETCH_IDEAS_SUCCESS,
+  CREATE_IDEA,
+  DELETE_IDEA,
+  UPDATE_IDEA,
+  GET_IDEA,
 } from './actionTypes';
 import { fetchStart, fetchFailure } from '../ErrorHandler/ErrorHandlerAction';
 import httpServise from '../../services/HttpService';
@@ -11,6 +15,7 @@ export const fetchIdeasSuccess = createAction(FETCH_IDEAS_SUCCESS);
 export const createIdea = createAction(CREATE_IDEA);
 export const deleteIdea = createAction(DELETE_IDEA);
 export const updateIdea = createAction(UPDATE_IDEA);
+export const getIdea = createAction(GET_IDEA);
 
 export const getDataIdeas = () => (dispatch) => {
   dispatch(fetchStart());
@@ -38,5 +43,13 @@ export const updateDataIdea = (id, data) => (dispatch) => {
   httpServise
     .put('ideasCards', id, data)
     .then(res => dispatch(updateIdea(res)))
+    .catch(() => dispatch(fetchFailure()));
+};
+
+export const getDataIdea = id => (dispatch) => {
+  dispatch(fetchStart());
+  httpServise
+    .getById('ideasCards', id)
+    .then(res => dispatch(getIdea(res)))
     .catch(() => dispatch(fetchFailure()));
 };

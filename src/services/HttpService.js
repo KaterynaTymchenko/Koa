@@ -11,6 +11,9 @@ const httpService = {
   get(url) {
     return customFetch(url);
   },
+  getById(url, id) {
+    return customFetch(`${url}/${id}`);
+  },
   post(url, data) {
     return customFetch(url, {
       method: 'POST',
