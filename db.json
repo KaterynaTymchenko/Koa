@@ -7,10 +7,10 @@
       "id": 1
     },
     {
-      "id": 2,
       "title": "Test idea card",
       "description": "This is first test idea card",
-      "author": "Test User"
+      "author": "Test User Kate",
+      "id": 2
     },
     {
       "title": "Kate",

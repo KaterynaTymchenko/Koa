@@ -45,7 +45,7 @@ export default function IdeaItem(props) {
         <Button onClick={() => props.deleteIdea(props.id)}>
           <i className="material-icons iconDelete">delete_forever</i>
         </Button>
-        <Link className="link" to={{ pathname: `/${props.id}` }}>
+        <Link className="link" to={{ pathname: `/ideas/${props.id}` }}>
           <i className="material-icons">forward</i>
         </Link>
       </CardActions>

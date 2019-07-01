@@ -9,7 +9,7 @@ function Router() {
     <Switch>
       <Route exact path="/" component={IdeaList} />
       <Route path="/create-idea" component={IdeaMaker} />
-      <Route path="/:id" component={Idea} />
+      <Route path="/ideas/:id" component={Idea} />
     </Switch>
   );
 }
