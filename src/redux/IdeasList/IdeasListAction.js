@@ -9,7 +9,7 @@ import {
 import { fetchStart, fetchFailure } from '../ErrorHandler/ErrorHandlerAction';
 import httpServise from '../../services/HttpService';
 
-const get = httpServise.get('ideasCards');
+const get = httpServise.get('/');
 
 export const fetchIdeasSuccess = createAction(FETCH_IDEAS_SUCCESS);
 export const createIdea = createAction(CREATE_IDEA);
@@ -25,7 +25,7 @@ export const getDataIdeas = () => (dispatch) => {
 export const postDataIdea = data => (dispatch) => {
   dispatch(fetchStart());
   httpServise
-    .post('ideasCards', data)
+    .post('idea', data)
     .then(res => dispatch(createIdea(res)))
     .catch(() => dispatch(fetchFailure()));
 };
@@ -33,7 +33,7 @@ export const postDataIdea = data => (dispatch) => {
 export const deleteDataIdea = id => (dispatch) => {
   dispatch(fetchStart());
   httpServise
-    .delete('ideasCards', id)
+    .delete('idea', id)
     .then(() => dispatch(deleteIdea(id)))
     .catch(() => dispatch(fetchFailure()));
 };
@@ -41,7 +41,7 @@ export const deleteDataIdea = id => (dispatch) => {
 export const updateDataIdea = (id, data) => (dispatch) => {
   dispatch(fetchStart());
   httpServise
-    .put('ideasCards', id, data)
+    .put('idea', id, data)
     .then(res => dispatch(updateIdea(res)))
     .catch(() => dispatch(fetchFailure()));
 };
@@ -49,7 +49,7 @@ export const updateDataIdea = (id, data) => (dispatch) => {
 export const getDataIdea = id => (dispatch) => {
   dispatch(fetchStart());
   httpServise
-    .getById('ideasCards', id)
+    .getById('idea', id)
     .then(res => dispatch(getIdea(res)))
     .catch(() => dispatch(fetchFailure()));
 };
