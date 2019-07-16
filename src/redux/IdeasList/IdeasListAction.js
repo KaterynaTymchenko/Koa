@@ -5,17 +5,19 @@ import {
   DELETE_IDEA,
   UPDATE_IDEA,
   GET_IDEA,
+  LOGIN,
 } from './actionTypes';
 import { fetchStart, fetchFailure } from '../ErrorHandler/ErrorHandlerAction';
 import httpServise from '../../services/HttpService';
 
-const get = httpServise.get('/');
+const get = httpServise.get('');
 
 export const fetchIdeasSuccess = createAction(FETCH_IDEAS_SUCCESS);
 export const createIdea = createAction(CREATE_IDEA);
 export const deleteIdea = createAction(DELETE_IDEA);
 export const updateIdea = createAction(UPDATE_IDEA);
 export const getIdea = createAction(GET_IDEA);
+export const login = createAction(LOGIN);
 
 export const getDataIdeas = () => (dispatch) => {
   dispatch(fetchStart());
@@ -51,5 +53,13 @@ export const getDataIdea = id => (dispatch) => {
   httpServise
     .getById('idea', id)
     .then(res => dispatch(getIdea(res)))
+    .catch(() => dispatch(fetchFailure()));
+};
+
+export const loginUser = () => (dispatch) => {
+  const data = { username: 'Kate', password: '12345' };
+  httpServise
+    .post('login', data)
+    .then(res => dispatch(login(res)))
     .catch(() => dispatch(fetchFailure()));
 };

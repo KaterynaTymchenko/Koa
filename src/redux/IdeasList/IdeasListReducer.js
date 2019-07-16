@@ -1,11 +1,17 @@
 import { handleActions } from 'redux-actions';
 import {
-  fetchIdeasSuccess, createIdea, deleteIdea, updateIdea, getIdea,
+  fetchIdeasSuccess,
+  createIdea,
+  deleteIdea,
+  updateIdea,
+  getIdea,
+  login,
 } from './IdeasListAction';
 
 const defaultState = {
   ideas: [],
   idea: {},
+  username: '',
 };
 
 const ideasListReducer = handleActions(
@@ -29,6 +35,7 @@ const ideasListReducer = handleActions(
       return { ...state, ideas: newIdeas };
     },
     [getIdea]: (state, action) => ({ ...state, idea: action.payload }),
+    [login]: (state, action) => ({ ...state, username: [...state.username, action.payload] }),
   },
   defaultState,
 );

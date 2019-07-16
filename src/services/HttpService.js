@@ -1,4 +1,4 @@
-const httpPath = 'http://localhost:8500';
+const httpPath = 'http://localhost:8501';
 
 const customFetch = (url, options) => fetch(`${httpPath}/${url}`, options).then((res) => {
   if (!res.ok) {
@@ -35,6 +35,15 @@ const httpService = {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Credentials': true,
+      },
+      body: JSON.stringify(data),
+    });
+  },
+  login(url, data) {
+    return customFetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
